@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication7;
+
 
 /**
  *
@@ -19,6 +19,7 @@ public class PongGame extends JComponent implements ActionListener {
     private int ballY = 510;
 
     public static void main(String[] args) {
+        
         JFrame window = new JFrame("Pong Game by Aaron");
         PongGame game = new PongGame();
         window.add(game);
@@ -26,7 +27,7 @@ public class PongGame extends JComponent implements ActionListener {
         window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         window.setLocationRelativeTo(null);
         window.setVisible(true);
-
+         
         Timer t = new Timer(100, game);
         t.start();
     }
@@ -114,8 +115,14 @@ public class PongGame extends JComponent implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(ballX==420){
+            
+            ballY+=10;
+            
+        }
+        else{
         ballX = ballX + 20;
-        ballY = ballY;
+        ballY = ballY;}
         repaint();
     }
 
